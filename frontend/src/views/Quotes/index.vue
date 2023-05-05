@@ -111,7 +111,7 @@ export default defineComponent({
       this.selectedId = null
       QuoteDataService.delete(id)
       .then((res: ResponseData) => {
-        this.retrieveQuotes()
+        this.getAllData()
       })
       .catch((err: Error) => {
         console.log(err);
