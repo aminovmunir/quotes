@@ -1,0 +1,24 @@
+# Version of Docker-compose
+version: '2.17.3'
+services:
+  # Add the node-js service
+  json-server:
+  # Location to the node.js dockerfile
+    build: 
+      context: ./json-server
+        # Name of the dockerfile
+      dockerfile: DockerFile
+    container_name: json-server
+    ports:
+       # Host port:Container port
+      - '3001:3001'
+  vue:
+  # Location to the react.js dockerfile
+    build: 
+      context: ./frontend
+        # Name of the dockerfile
+      dockerfile: DockerFile
+    container_name: vue-container
+    ports:
+     # Host port:Container port
+      - '8080:8080'
